@@ -5,9 +5,10 @@
   
 }
 :root{
-  --text-color: white;/*
+  /*
   Estou crinado nomes para substituir os atributos de cores e estilos para poder mudar com a ação do Js. Apartir do momento q crio esses nome e substituo nos valores das classes, ids e etc, posso mudar atravaes do Js seus valores. O padráo de sintaxe é --qualquernome: e o valor original; e coloco dentro do pseudo-elemento root entre chaves {}
   */
+  --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.50);
   --surface-color:rgba(255, 255, 255, 0.10);
@@ -89,16 +90,42 @@ body {
   border: none;
   border-radius: 50%;
   /* ***COMO CENTRALIZAR UM ELEMENTO COM POSITION ABSOLUTE****  */
-
-  position: absolute;/*faz o posicionamento em camadas e habilitas funções tais como top, right, left e bottom, z-index para mudar a camada*/
-  left: 0;/*posiciona o elemento a esquerda ou direita*/
-  z-index: 1;/*puxo o elemento para frente nas camadas*/
-  transform: translateY(-50%);/*posiciona o elemento 50% para fora - move no eixo y, ou seja, par cima e par baixo*/
-  top: 50%;/*alinha o elemento na metade do espaço.*/
+  position: absolute;
+  /*faz o posicionamento em camadas e habilitas funções tais como top, right, left e bottom, z-index para mudar a camada*/
+  left: 0;
+  /*posiciona o elemento a esquerda ou direita*/
+  z-index: 1;
+  /*puxo o elemento para frente nas camadas*/
+  transform: translateY(-50%);
+  /*posiciona o elemento 50% para fora - move no eixo y, ou seja, par cima e par baixo*/
+  top: 50%;
+  /*alinha o elemento na metade do espaço.*/
+  animation: slide-out .3s;
+  /*inicia a animação da volta*/
+  cursor: pointer;
 }
+#switch button:hover{
+  outline: 8px solid var(--social-link-hover);
+  /*coloca uma bordar externa no botão quando passo o mouse sobre ele*/
+}
+
 .light #switch button {
+
+  /* ANTES quando não tinha a animação 
   right: 0;
-  left: initial;/*marca a posição left como inicial do botão*/
+  left: initial;marca a posição left como inicial do botão 
+  */
+  
+  /* AONDE VAI A CONTECER A ANIMAÇÃO!!! */
+  
+  /* uso a propriedade animation com dois valores: o nome da animação que criei e o tempo q vai durar. e ainda uso p "forwards" para o botão não voltar para posição inicial que é o padrão apos a animação */
+  animation: slide-in .3s forwards;
+
+}
+
+.light #switch button:hover{
+  outline: 8px solid var(--social-link-hover);
+  /*coloca uma bordar externa no botão quando passo o mouse sobre ele*/
 }
 
 #switch span {/*por padão span é inline - e in-line não aceita width*/
@@ -176,11 +203,36 @@ footer {
   /*de 700px de largura pra cima (no minimo 700px de largura meu dispositivo*/
   :root {
     --bg-url: url(./assets/bg-desktop.jpg);
+    /*trocando a imagem de fundo a partir de 700px width*/
 
   }
 
   .light {
-      --bg-url: url(./assets/bg-desktop-light.jpg)
+      --bg-url: url(./assets/bg-desktop-light.jpg);
+      /*trocando a imagem de fundo a partir de 700px width*/
     }
 }
 
+/* Animação do botão light mode - atraves de @(at-rule)*/
+/*   **CRIANDO A ANIMAÇÃO**  */
+
+@keyframes slide-in {/*escoçho nome q eu quiser, nesse caso foi "slide-in"*/
+  from { /* onde começa a animação. que posição*/
+    left: 0;
+  }
+
+  to { /*onde termina a nimação.para onde ela vai.*/
+    left: 50%;
+  }
+
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+
+  to {
+    left: 0;
+  }
+}
