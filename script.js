@@ -28,3 +28,12 @@ function toggleMode(){
 
   
 }
+/*Contador de Likes*/
+const likeCount = document.getElementById('contagem')
+let counter = 0
+function contador(){
+  
+  counter++
+  likeCount.textContent = counter.toString()
+  
+}
