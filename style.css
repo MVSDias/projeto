@@ -100,7 +100,7 @@ body {
   /*posiciona o elemento 50% para fora - move no eixo y, ou seja, par cima e par baixo*/
   top: 50%;
   /*alinha o elemento na metade do espaço.*/
-  animation: slide-out .3s;
+  animation: slide-out .2s;
   /*inicia a animação da volta*/
   cursor: pointer;
 }
@@ -119,7 +119,7 @@ body {
   /* AONDE VAI A CONTECER A ANIMAÇÃO!!! */
   
   /* uso a propriedade animation com dois valores: o nome da animação que criei e o tempo q vai durar. e ainda uso p "forwards" para o botão não voltar para posição inicial que é o padrão apos a animação */
-  animation: slide-in .3s forwards;
+  animation: slide-in .2s forwards;
 
 }
 
