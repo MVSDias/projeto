@@ -30,6 +30,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - JavaScript
 - Git e Github
 - Figma
+- OBS: Fiz algumas alterações, incluí um contador de likes, animação na imagem de perfil quando passo o mouse sobre.
 
 ## 💻 Projeto
 
