@@ -2,27 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 :root{
-  /*
-  Estou crinado nomes para substituir os atributos de cores e estilos para poder mudar com a ação do Js. Apartir do momento q crio esses nome e substituo nos valores das classes, ids e etc, posso mudar atravaes do Js seus valores. O padráo de sintaxe é --qualquernome: e o valor original; e coloco dentro do pseudo-elemento root entre chaves {}
-  */
   --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  --bg-url: url(./assets/fundo_novo_dark_mobile.png);
   --stroke-color: rgba(255, 255, 255, 0.50);
   --surface-color:rgba(255, 255, 255, 0.10);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --social-link-hover: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
-  
 }
 
 .light {/*
   Agora crio toda a alteração que farei no estilo nessa classe
   */
   --text-color: black;
-  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --bg-url: url(./assets/fundo_novo_light_mobile.png);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -35,22 +30,11 @@ body *{
   font-family: 'Inter', sans-serif;
 }
 
-
 body {
-  /*
-  background-image: url
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-
-  background: color image repeat position/size - essa é a ordem quando for usar  shorthands
-  */
-  
   background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
-  
-  
 }
+
 #container {
   width: 100%;
   max-width: 588px;
@@ -61,7 +45,7 @@ body {
 /*profile*/
 
 #profile {
-  text-align: center;/*como imagem é "inline display, posso centraçizá-la com o text-align center no container pai da imagem*/
+  text-align: center;
   padding: 24px;
 }
 
@@ -76,65 +60,45 @@ body {
 }
 
 .imagem:hover{
-   
-   transform: scale(1.3);
-   cursor: pointer;
+  transform: scale(1.3);
+  cursor: pointer;
 }
 
 /* switch */
 
 #switch {
- 
-  width: 64px;/*ajusto o tamanho do switch para igualar ao span para poder localizar o botão*/
-  position: relative;/*relativiza o position absolute abaixo para ajudar a posicionar os elementos dentro dessa div "switch"*/
+  width: 64px;
+  position: relative;
   margin: 4px auto;
 }
+
 #switch button {
   width: 32px;
   height: 32px;
   background:white var(--switch-bg-url) no-repeat center;
   border: none;
   border-radius: 50%;
-  /* ***COMO CENTRALIZAR UM ELEMENTO COM POSITION ABSOLUTE****  */
   position: absolute;
-  /*faz o posicionamento em camadas e habilitas funções tais como top, right, left e bottom, z-index para mudar a camada*/
   left: 0;
-  /*posiciona o elemento a esquerda ou direita*/
   z-index: 1;
-  /*puxo o elemento para frente nas camadas*/
   transform: translateY(-50%);
-  /*posiciona o elemento 50% para fora - move no eixo y, ou seja, par cima e par baixo*/
   top: 50%;
-  /*alinha o elemento na metade do espaço.*/
   animation: slide-out .2s;
-  /*inicia a animação da volta*/
   cursor: pointer;
 }
 #switch button:hover{
   outline: 8px solid var(--social-link-hover);
-  /*coloca uma bordar externa no botão quando passo o mouse sobre ele*/
 }
 
 .light #switch button {
-
-  /* ANTES quando não tinha a animação 
-  right: 0;
-  left: initial;marca a posição left como inicial do botão 
-  */
-  
-  /* AONDE VAI A CONTECER A ANIMAÇÃO!!! */
-  
-  /* uso a propriedade animation com dois valores: o nome da animação que criei e o tempo q vai durar. e ainda uso p "forwards" para o botão não voltar para posição inicial que é o padrão apos a animação */
   animation: slide-in .2s forwards;
-
 }
 
 .light #switch button:hover{
   outline: 8px solid var(--social-link-hover);
-  /*coloca uma bordar externa no botão quando passo o mouse sobre ele*/
 }
 
-#switch span {/*por padão span é inline - e in-line não aceita width*/
+#switch span {
   display: block;
   width: 64px;
   height: 24px;
@@ -182,9 +146,8 @@ body {
   justify-content: center;
   margin-top: 20px;
   font-size: 24px;
-  border:1px solid red;
-   
 }
+
 .icones {
   display: flex;
   align-items: center;
@@ -193,6 +156,7 @@ body {
   border-radius: 50%;
   transition: 0.2s;
 }
+
 .like {
   display: flex;
   align-items: center;
@@ -202,27 +166,28 @@ body {
 
 .icones:hover {
   background: var(--social-link-hover);
-  
 }
 /* footer */
 footer {
+  width: 360px;
+  margin: 0 auto;
   font-size: 14px;
   font-weight: 400;
   text-align: center;
   padding: 24px 0;
+  border-top: 1px solid var(--stroke-color); 
 }
 /* media queries - */
 @media (min-width: 700px){
   /*de 700px de largura pra cima (no minimo 700px de largura meu dispositivo*/
   :root {
-    --bg-url: url(./assets/bg-desktop.jpg);
-    /*trocando a imagem de fundo a partir de 700px width*/
-
+    --bg-url: url(./assets/fundo_novo_dark_desktop.png);
+    /*trocando a imagem de fundo DARK a partir de 700px width*/
   }
 
   .light {
-      --bg-url: url(./assets/bg-desktop-light.jpg);
-      /*trocando a imagem de fundo a partir de 700px width*/
+      --bg-url: url(./assets/fundo_novo_light_desktop.png);
+      /*trocando a imagem de fundo LIGHT a partir de 700px width*/
     }
 }
 
