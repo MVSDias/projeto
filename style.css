@@ -144,8 +144,8 @@ body {
 .rede_social {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  font-size: 24px;
+  margin: 20px 60px 0 44px;
+  font-size: 20px;
 }
 
 .icones {
@@ -162,7 +162,9 @@ body {
   align-items: center;
   justify-content: center;
   padding: 16px 3px;
+  font-size: 16px;
 }
+
 
 .icones:hover {
   background: var(--social-link-hover);
@@ -171,7 +173,7 @@ body {
 footer {
   width: 360px;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   text-align: center;
   padding: 24px 0;
@@ -189,6 +191,18 @@ footer {
       --bg-url: url(./assets/fundo_novo_light_desktop.png);
       /*trocando a imagem de fundo LIGHT a partir de 700px width*/
     }
+  .icones {
+    font-size: 30px;
+    gap: 10px;
+  }
+
+  .like {
+    font-size: 20px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
 }
 
 /* Animação do botão light mode - atraves de @(at-rule)*/
